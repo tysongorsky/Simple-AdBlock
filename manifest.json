@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Simple AdBlock",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight blocker for common advertising and tracking domains.",
   "permissions": [
     "declarativeNetRequest",
@@ -25,5 +25,20 @@
   "action": {
     "default_title": "Simple AdBlock",
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": [
+        "youtube.js"
+      ],
+      "css": [
+        "youtube.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
 }
