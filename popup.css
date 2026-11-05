@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body {
+  width: 300px;
+  margin: 0;
+  color: #17202a;
+  background: #f5f7f8;
+  font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.panel { padding: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.mark {
+  display: grid; place-items: center; width: 42px; height: 42px;
+  border-radius: 13px; color: white; background: #182b3a;
+  font-size: 21px; font-weight: 750;
+}
+h1 { margin: 0; font-size: 17px; letter-spacing: -.3px; }
+.subtitle { margin: 2px 0 0; color: #71808b; font-size: 12px; }
+.status-card {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px; border: 1px solid #e5e9ec; border-radius: 14px;
+  background: white;
+}
+.eyebrow { margin: 0 0 3px; color: #84919a; font-size: 10px; font-weight: 750; letter-spacing: 1px; }
+.status { margin: 0; font-size: 15px; font-weight: 700; }
+.message { min-height: 34px; margin: 12px 2px 4px; color: #687782; font-size: 12px; }
+footer { margin-top: 13px; padding-top: 12px; border-top: 1px solid #e3e8eb; color: #89959d; font-size: 10px; text-align: center; }
+.switch { position: relative; display: inline-block; width: 46px; height: 27px; }
+.switch input { width: 0; height: 0; opacity: 0; }
+.slider { position: absolute; inset: 0; cursor: pointer; border-radius: 20px; background: #c8d0d5; transition: .18s; }
+.slider:before { position: absolute; content: ""; width: 21px; height: 21px; left: 3px; top: 3px; border-radius: 50%; background: white; transition: .18s; box-shadow: 0 1px 3px #0002; }
+input:checked + .slider { background: #16865b; }
+input:checked + .slider:before { transform: translateX(19px); }
+input:focus-visible + .slider { outline: 3px solid #8ab9ff; outline-offset: 3px; }
