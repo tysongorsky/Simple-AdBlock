@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple AdBlock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">S</div>
+      <div>
+        <h1>Simple AdBlock</h1>
+        <p class="subtitle">Cleaner browsing, simply.</p>
+      </div>
+    </div>
+
+    <section class="status-card">
+      <div>
+        <p class="eyebrow">PROTECTION</p>
+        <p id="status" class="status">Checking…</p>
+      </div>
+      <label class="switch" aria-label="Toggle ad blocking">
+        <input id="toggle" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <p id="message" class="message" role="status">Loading protection status.</p>
+    <footer>Domain-based blocking · Runs locally</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
