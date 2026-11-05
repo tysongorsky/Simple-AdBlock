@@ -5,10 +5,11 @@ A lightweight ad and tracker blocker for Chrome and other Chromium-based browser
 ## Features
 
 - Blocks requests to a curated starter list of advertising and tracking domains.
-- Best-effort YouTube support: hides common page ad placements and clicks visible Skip Ad controls when YouTube exposes them.
+- YouTube ad handling: hides common page ad placements and clicks visible Skip Ad controls when available.
+- SponsorBlock integration: automatically skips community-reported sponsor segments, intros, outros, self-promotion, and other selected segment categories.
 - One-click enable/disable switch in the extension popup.
 - Uses Chrome Manifest V3 and the built-in Declarative Net Request API.
-- No account, external server, analytics, or data collection.
+- No account or analytics. SponsorBlock lookups use its public API with a four-character SHA-256 video-ID prefix; the extension matches the exact video locally.
 
 ## Install from source
 
@@ -24,7 +25,7 @@ Click the Simple AdBlock toolbar icon to see protection status and switch blocki
 
 ## Limitations
 
-This is an early domain-based blocker, not a complete replacement for a maintained content blocker. It may not remove ads served from the same domain as a website, YouTube support is best-effort: it can hide common page ad placements and use visible Skip Ad controls, but it cannot guarantee removal of every in-stream ad. YouTube frequently changes its player, and some ads cannot be skipped. Blocking a shared domain can occasionally affect website features.
+This is an early domain-based blocker, not a complete replacement for a maintained content blocker. It may not remove ads served from the same domain as a website, YouTube ad handling is best-effort and cannot guarantee removal of every in-stream ad. SponsorBlock only skips segments that have been submitted by its community and returned by its API. The extension does not submit segments or vote. Blocking a shared domain can occasionally affect website features.
 
 ## Customize the blocklist
 
@@ -32,4 +33,9 @@ Edit `rules.json` and reload the extension from `chrome://extensions`. Rules blo
 
 ## Privacy
 
-The extension does not transmit browsing data. Its rules are processed locally by the browser.
+The ad-domain rules are processed locally. For SponsorBlock, the extension hashes the YouTube video ID and sends only the first four characters to the SponsorBlock API. The API returns possible matches, and the extension checks the exact video ID locally. See the [SponsorBlock API documentation](https://wiki.sponsor.ajay.app/w/API_Docs) and [SponsorBlock project](https://sponsor.ajay.app/).
+
+
+## Attribution
+
+Sponsor segment data is provided by the [SponsorBlock project](https://sponsor.ajay.app/). Simple AdBlock is an independent integration and is not an official SponsorBlock extension.
