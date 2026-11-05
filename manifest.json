@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Simple AdBlock",
+  "version": "1.0.0",
+  "description": "A lightweight blocker for common advertising and tracking domains.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ads",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "action": {
+    "default_title": "Simple AdBlock",
+    "default_popup": "popup.html"
+  }
+}
