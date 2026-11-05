@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Simple AdBlock",
-  "version": "1.1.0",
-  "description": "A lightweight blocker for common advertising and tracking domains.",
+  "version": "1.2.0",
+  "description": "Blocks common ads and skips community-reported YouTube sponsor segments.",
   "permissions": [
     "declarativeNetRequest",
     "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "https://sponsor.ajay.app/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -33,7 +34,8 @@
         "https://m.youtube.com/*"
       ],
       "js": [
-        "youtube.js"
+        "youtube.js",
+        "sponsorblock.js"
       ],
       "css": [
         "youtube.css"
